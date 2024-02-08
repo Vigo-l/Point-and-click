@@ -1,1 +1,1 @@
-alert('hello world')
+document.getElementById("mainTitle").innerText = "Point and Click game";
