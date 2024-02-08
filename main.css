@@ -5,6 +5,7 @@ body {
     gap: 20px;
     margin: 0px;
     background-color: #000000;
+
 }
 
 h1 {
@@ -31,14 +32,22 @@ p {
     background-color: blue;
 }
 
+#maincharacter {
+    width: 32px;
+    height: 64px;
+    background-color: cadetblue;
+    left: 360px;
+    top: 263px;
+}
+
 #inventoryBox {
     position: relative;
     display: block;
     left: 10px;
-    top:10px;
+    top: 10px;
     width: 180px;
     height: 80px;
-    color:white;
+    color: white;
     background-color: #602d00;
     border: white 1px solid;
     padding: 10px;
@@ -55,18 +64,18 @@ p {
 }
 
 #brownBar {
-    position:absolute;
+    position: absolute;
     height: 32px;
     width: 800px;
     background-color: #442c1c;
-    bottom:0px;
+    bottom: 0px;
 }
 
 #mainCharacterSpeech {
     left: 0px;
     bottom: 0px;
     background-color: red;
-    width:100px;
+    width: 100px;
     height: 100px;
 }
 
@@ -74,7 +83,7 @@ p {
     right: 0px;
     bottom: 0px;
     background-color: red;
-    width:100px;
+    width: 100px;
     height: 100px;
 }
 
@@ -83,10 +92,9 @@ p {
     z-index: 1000;
 }
 
-.heroCharacter{
+.heroCharacter {
     position: absolute;
     z-index: 100;
-
 }
 
 .background {
