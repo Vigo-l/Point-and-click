@@ -10,6 +10,7 @@ const offsetCharacter = 16;
 //Foreground Items
 const door1 = document.getElementById("door1");
 const sign = document.getElementById("sign");
+const key = document.getElementById("key1");
 
 
 gameWindow.onclick = function (e) {
@@ -22,6 +23,13 @@ gameWindow.onclick = function (e) {
 
 
     switch (e.target.id) {
+        case "key1":
+            console.log('found key!');
+            document.getElementById("key1").remove();
+            const keyElement = document.createElement("li");
+            keyElement.innerText = "Key";
+            inventoryList.appendChild(keyElement);
+
         case "door1":
             mainCharacter.style.backgroundColor = "#FFFF00";
             door1.style.opacity = 0.5;
