@@ -53,6 +53,15 @@ p {
     left: 400px;
 }
 
+#key1 {
+    width: 54px;
+    height: 32px;
+    background-color: #ffff00;
+    opacity: 1;
+    top: 100px;
+    left: 200px;
+}
+
 #sign {
     width: 64px;
     height: 32px;
