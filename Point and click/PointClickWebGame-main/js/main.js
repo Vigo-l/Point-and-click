@@ -27,6 +27,7 @@ gameWindow.onclick = function (e) {
             console.log('found key!');
             document.getElementById("key1").remove();
             const keyElement = document.createElement("li");
+            keyElement.id = "inv-key";
             keyElement.innerText = "Key";
             inventoryList.appendChild(keyElement);
 
