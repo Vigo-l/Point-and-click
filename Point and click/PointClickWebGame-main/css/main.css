@@ -53,13 +53,21 @@ p {
     left: 400px;
 }
 
+#door2 {
+    width: 44px;
+    height: 54px;
+    /* background-color: #fb00ff; */
+    top: 296px;
+    left: 169px;
+}
+
 #key1 {
-    width: 54px;
+    width: 32px;
     height: 32px;
-    background-color: #ffff00;
+    background-color: #fffb00;
     opacity: 1;
-    top: 150px;
-    left: 400px;
+    top: 166px;
+    left: 416px;
 }
 
 #sign {
@@ -143,4 +151,14 @@ p {
 .background {
     position: absolute;
     z-index: 0;
+}
+
+.speech-bubble {
+    background-color: white;
+    border-radius: 60px;
+    color: #000000;
+    padding: 5px 5px 5px 20px;
+    font-size: 12px;
+    width: 300px;
+    transition: all 1s ease-in-out;
 }
