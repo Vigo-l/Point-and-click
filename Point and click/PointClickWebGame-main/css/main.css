@@ -16,7 +16,7 @@ p {
     margin: 0px;
 }
 
-/*ID's */
+
 
 #title {
     grid-column-start: 2;
@@ -34,7 +34,7 @@ p {
     background-color: blue;
 }
 
-/*Main charcater*/
+
 #mainCharacter {
     width: 32px;
     height: 32px;
@@ -43,7 +43,7 @@ p {
     top: 304px;
 }
 
-/*Foreground Items*/
+
 #door1 {
     width: 64px;
     height: 64px;
@@ -56,7 +56,7 @@ p {
 #door2 {
     width: 44px;
     height: 54px;
-    /* background-color: #fb00ff; */
+
     top: 296px;
     left: 169px;
 }
@@ -134,7 +134,7 @@ p {
 }
 
 
-/*Classes*/
+
 .foreground {
     position: absolute;
     z-index: 1000;
@@ -147,7 +147,7 @@ p {
     transition: all 1s ease-in-out;
 }
 
-/*Background */
+
 .background {
     position: absolute;
     z-index: 0;
