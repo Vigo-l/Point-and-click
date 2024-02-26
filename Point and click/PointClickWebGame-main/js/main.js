@@ -1,12 +1,28 @@
 document.getElementById("mainTitle").innerText = "Point and Click adventure game";
 
+let gameState = {
+    "door2locked": true,
+    "inventory": [
+    ],
+    "Keypickedup": false
+}
+
+if (typeof (Storage) !== "undefined") {
+    if (localStorage.gameState) {
+        gameState = JSON.parse(localStorage.gameState)
+
+    } else {
+        localStorage.setItem("gameState", JSON.stringify(gameState))
+    }
+} else {
+    alert('web storage not supported')
+}
+
 const gameWindow = document.getElementById("gameWindow");
 
 
-gameState = {
-    "door2locked": true,
-    "inventory": [
-    ]
+if (localStorage.Keypickedup) {
+    document.getElementById("key1").remove()
 }
 
 const sec = 1000;
@@ -63,6 +79,7 @@ gameWindow.onclick = function (e) {
                     changeInventory('key', 'delete');
                     console.log('Door unlocked!');
                     document.getElementById("door1").remove();
+                    saveToBrowser(gameState);
 
                 } else {
 
@@ -169,4 +186,12 @@ function showMessage(targetBalloon, targetSound, message) {
 function hideMessage(targetBalloon, targetSound) {
     targetSound.pause();
     targetBalloon.style.opacity = "0";
+}
+/** 
+*
+* @param {Object} gameState
+*/
+function saveToBrowser(gameState) {
+    localStorage.gameState = JSON.stringify(gameState);
+
 }
