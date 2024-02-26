@@ -53,6 +53,7 @@ gameWindow.onclick = function (e) {
 
 
             break;
+
         case "door2":
             if (gameState.door2locked == true) {
 
@@ -61,7 +62,7 @@ gameWindow.onclick = function (e) {
                     gameState.door2locked = false;
                     changeInventory('key', 'delete');
                     console.log('Door unlocked!');
-                    document.getElementById("door1").img = "door1 open.png";
+                    document.getElementById("door1").remove();
 
                 } else {
 

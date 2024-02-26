@@ -44,9 +44,11 @@ p {
 
 /*Foreground Items*/
 #door1 {
-    width: 64px;
-    height: 64px;
-    opacity: 1;
+    position: absolute;
+    z-index: 1000;
+    transition: all 1s ease-in-out;
+    width: 50px;
+    height: 10px;
 }
 
 #door2 {
@@ -155,6 +157,8 @@ p {
     position: absolute;
     z-index: 1000;
     transition: all 1s ease-in-out;
+    width: 50px;
+    height: 10px;
 }
 
 .heroCharacter {
