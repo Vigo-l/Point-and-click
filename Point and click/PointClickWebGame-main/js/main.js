@@ -1,47 +1,32 @@
 document.getElementById("mainTitle").innerText = "Point and Click adventure game";
 
-let gameState = {
-    "door2locked": true,
-    "inventory": [
-    ],
-    "Keypickedup": false
-}
-
-if (typeof (Storage) !== "undefined") {
-    if (localStorage.gameState) {
-        gameState = JSON.parse(localStorage.gameState)
-
-    } else {
-        localStorage.setItem("gameState", JSON.stringify(gameState))
-    }
-} else {
-    alert('web storage not supported')
-}
-
+//Game window reference
 const gameWindow = document.getElementById("gameWindow");
 
-
-if (localStorage.Keypickedup) {
-    document.getElementById("key1").remove()
+//Game state
+gameState = {
+    "door2locked": true,
+    "inventory": [
+    ]
 }
 
 const sec = 1000;
 
-
+//Main Character
 const mainCharacter = document.getElementById("mainCharacter");
 const offsetCharacter = 16;
 
-
+//speech bubbles
 const mainCharacterSpeech = document.getElementById("mainCharacterSpeech");
 const counterSpeech = document.getElementById("counterSpeech");
 const counterAvatarImg = document.getElementById("counterAvatarImg");
 const mcAudio = document.getElementById("mcAudio");
 const cAudio = document.getElementById("cAudio");
+//Inventory
+const inventoryBox = document.getElementById("inventoryBox"); //div
+const inventoryList = document.getElementById("inventoryList"); //ul
 
-const inventoryBox = document.getElementById("inventoryBox");
-const inventoryList = document.getElementById("inventoryList");
-
-
+//Foreground Items
 const door1 = document.getElementById("door1");
 const sign = document.getElementById("sign");
 
@@ -58,7 +43,6 @@ gameWindow.onclick = function (e) {
     console.log(e.target.id);
     switch (e.target.id) {
 
-
         case "key1":
             sign.style.opacity = 1;
             if (document.getElementById("key1") !== null) {
@@ -67,22 +51,20 @@ gameWindow.onclick = function (e) {
                 changeInventory('key', 'add');
             }
 
-
             break;
-
         case "door2":
             if (gameState.door2locked == true) {
-
+                // check if we have key
                 if (document.getElementById("inv-key") !== null) {
-
+                    //yes -> unlock door?
                     gameState.door2locked = false;
                     changeInventory('key', 'delete');
                     console.log('Door unlocked!');
                     document.getElementById("door1").remove();
-                    saveToBrowser(gameState);
+
 
                 } else {
-
+                    //no -> alert 'door locked'
                     alert("Door is locked!");
                 }
             } else {
@@ -107,6 +89,7 @@ gameWindow.onclick = function (e) {
             break;
 
         default:
+            //explode
 
 
             sign.style.opacity = 1;
@@ -186,12 +169,4 @@ function showMessage(targetBalloon, targetSound, message) {
 function hideMessage(targetBalloon, targetSound) {
     targetSound.pause();
     targetBalloon.style.opacity = "0";
-}
-/** 
-*
-* @param {Object} gameState
-*/
-function saveToBrowser(gameState) {
-    localStorage.gameState = JSON.stringify(gameState);
-
 }
