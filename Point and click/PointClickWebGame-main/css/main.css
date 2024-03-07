@@ -144,6 +144,14 @@ p {
 
 #counterAvatarImg {
     opacity: 0;
+    right: -20px;
+    bottom: -20px;
+}
+
+#Explosion img {
+    opacity: 0;
+    top: 284px;
+    left: 704px;
 }
 
 #counterSpeech {

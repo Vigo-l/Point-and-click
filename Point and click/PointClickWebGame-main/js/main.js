@@ -20,6 +20,7 @@ const offsetCharacter = 16;
 const mainCharacterSpeech = document.getElementById("mainCharacterSpeech");
 const counterSpeech = document.getElementById("counterSpeech");
 const counterAvatarImg = document.getElementById("counterAvatarImg");
+var Explosion = document.getElementById("Explosion");
 const mcAudio = document.getElementById("mcAudio");
 const cAudio = document.getElementById("cAudio");
 //Inventory
@@ -51,6 +52,9 @@ gameWindow.onclick = function (e) {
                     changeInventory('key', 'delete');
                     console.log('Door unlocked!');
                     document.getElementById("door2").remove();
+
+                    setTimeout(function () { Explosion.style.opacity = 1; }, 0.1 * sec);
+
 
 
                 } else {
