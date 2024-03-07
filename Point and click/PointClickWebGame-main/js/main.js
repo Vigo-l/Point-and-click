@@ -40,18 +40,8 @@ gameWindow.onclick = function (e) {
         mainCharacter.style.top = y - offsetCharacter + "px";
     }
 
-    console.log(e.target.id);
+    console.log("Clicked element ID:", e.target.id);
     switch (e.target.id) {
-
-        case "key1":
-            sign.style.opacity = 1;
-            if (document.getElementById("key1") !== null) {
-                console.log('Found key!');
-                document.getElementById("key1").remove();
-                changeInventory('key', 'add');
-            }
-
-            break;
         case "door2":
             if (gameState.door2locked == true) {
                 // check if we have key
@@ -60,11 +50,10 @@ gameWindow.onclick = function (e) {
                     gameState.door2locked = false;
                     changeInventory('key', 'delete');
                     console.log('Door unlocked!');
-                    document.getElementById("door1").remove();
+                    document.getElementById("door2").remove();
 
 
                 } else {
-                    //no -> alert 'door locked'
                     alert("Door is locked!");
                 }
             } else {
@@ -80,11 +69,14 @@ gameWindow.onclick = function (e) {
             break;
 
         case "statue":
-            showMessage(mainCharacterSpeech, mcAudio, "Wow cool statue..");
+            showMessage(mainCharacterSpeech, mcAudio, "Wow Cute cat");
             setTimeout(function () { counterAvatarImg.style.opacity = 1; }, 4 * sec);
-            setTimeout(showMessage, 4 * sec, counterSpeech, cAudio, "I can talk you know..dummy");
-            setTimeout(showMessage, 8 * sec, mainCharacterSpeech, mcAudio, "You don't have to be so mean.");
-            setTimeout(showMessage, 12 * sec, counterSpeech, cAudio, "You should check the north house..");
+            setTimeout(showMessage, 4 * sec, counterSpeech, cAudio, "Im also a talking cat");
+            setTimeout(showMessage, 8 * sec, mainCharacterSpeech, mcAudio, "Oh thats cool");
+            setTimeout(showMessage, 12 * sec, counterSpeech, cAudio, "Heres the key for the facility");
+            if (document.getElementById("key1") !== null) {
+                changeInventory('key', 'add');
+            }
             setTimeout(function () { counterAvatarImg.style.opacity = 0; }, 16 * sec);
             break;
 

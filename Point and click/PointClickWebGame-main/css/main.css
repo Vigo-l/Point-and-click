@@ -63,17 +63,11 @@ p {
     width: 44px;
     height: 54px;
     /* background-color: #fb00ff; */
-    top: 296px;
-    left: 169px;
-}
-
-#key1 {
-    width: 32px;
-    height: 32px;
-    background-color: #fffb00;
-    opacity: 1;
-    top: 166px;
-    left: 416px;
+    top: 525px;
+    left: 348px;
+    background-image: url("../assets/img/door1.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
 
 #sign {
@@ -89,7 +83,12 @@ p {
     height: 64px;
     top: 284px;
     left: 704px;
+    background-image: url("../assets/img/Cat.png");
+    background-size: contain;
+    background-repeat: no-repeat;
 }
+
+
 
 /*Inventory box*/
 #inventoryBox {
